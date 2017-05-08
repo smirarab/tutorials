@@ -60,6 +60,12 @@ mkdir pastaRuns
 cd pastaRuns/
 ln -s ../pasta/data/ .
 run_pasta.py -i data/small.fasta
-cd ..
-history > tutorial.md
+Echo "Please go to https://drive.google.com/file/d/0B0lcoFFOYQf8SUhHNHpIcXNjY0E/view and download the package, and place it here"; sleep 50;
+mv ~/Downloads/sepp-package.zip .
+unzip sepp-package.zip
+cd sepp-package
+cd sepp/
+python setup.py config -c
+cd ../../seppRuns/
+../sepp-package/run-sepp.sh ../sepp-package/test.frag test-gg
 ```
