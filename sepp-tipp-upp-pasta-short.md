@@ -1,3 +1,4 @@
+### Start with installations
 ``` bash
 git clone git@github.com:smirarab/pasta.git 
 git clone git@github.com:smirarab/sepp.git
@@ -24,12 +25,19 @@ run_tipp.py -c
 run_tipp.py -h
 cd ..
 ls
+```
+
+### SEPP
+``` bash
 mkdir seppRuns
 cd seppRuns
 ln -s ../sepp/test/unittest/data/mock/ .
 run_sepp.py -t mock/rpsS/sate.tre -r mock/rpsS/sate.tre.RAxML_info -a mock/rpsS/sate.fasta -f mock/rpsS/rpsS.even.fas -o rpsS.out.default
 pwd
 cd ..
+```
+### TIPP
+``` bash
 mkdir tippRuns
 cd tippRuns/
 ln -s ../sepp/test/ .
@@ -46,6 +54,9 @@ ls
 head out/abundance.species.csv 
 pwd
 cd ../
+```
+### UPP
+``` bash
 mkdir uppRuns
 cd uppRuns/
 ln -s ../sepp/test/ . -s 
@@ -56,12 +67,21 @@ ls -alt
 head -n4 output_alignment_masked.fasta
 pwd
 cd ..
+```
+
+### PASTA
+``` bash
 mkdir pastaRuns
 cd pastaRuns/
 ln -s ../pasta/data/ .
 run_pasta.py -i data/small.fasta
-Echo "Please go to https://drive.google.com/file/d/0B0lcoFFOYQf8SUhHNHpIcXNjY0E/view and download the package, and place it here"; sleep 50;
-mv ~/Downloads/sepp-package.zip .
+run_pasta_gui.py
+pythonw `which run_pasta_gui.py`
+```
+
+### SEPP on Greengenes
+Please go to <https://drive.google.com/file/d/0B0lcoFFOYQf8SUhHNHpIcXNjY0E/view>, download the package, and place it here
+``` bash
 unzip sepp-package.zip
 cd sepp-package
 cd sepp/
