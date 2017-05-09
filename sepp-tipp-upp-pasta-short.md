@@ -14,7 +14,6 @@ run_sepp.py -h
 which run_pasta.py
 python setup.py upp -c
 run_upp.py -h
-wget http://www.cs.utexas.edu/~phylo/software/sepp/tipp.zip
 curl -O http://www.cs.utexas.edu/~phylo/software/sepp/tipp.zip
 unzip tipp.zip 
 export REFERENCE=`pwd`/tipp
@@ -59,7 +58,6 @@ cd ../
 ``` bash
 mkdir uppRuns
 cd uppRuns/
-ln -s ../sepp/test/ . -s 
 ln -s ../sepp/test/ .
 run_upp.py -A 10 -B 1000 -M -1 -m amino -s test/unittest/data/upp_frag/amino.fas
 pwd
