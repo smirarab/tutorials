@@ -78,9 +78,9 @@ pythonw `which run_pasta_gui.py`
 ```
 
 ### SEPP on Greengenes
-Please go to <https://drive.google.com/file/d/0B0lcoFFOYQf8SUhHNHpIcXNjY0E/view>, download the package, and place it here
 ``` bash
-unzip sepp-package.zip
+wget  "https://raw.github.com/smirarab/sepp-refs/master/gg/sepp-package.tar.bz"
+tar tvfj sepp-package.tar.bz
 cd sepp-package
 cd sepp/
 python setup.py config -c
