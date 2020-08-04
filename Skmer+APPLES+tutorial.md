@@ -45,6 +45,7 @@ python -m pip install --upgrade apples
 git clone https://github.com/balabanmetin/misa.git
 cd misa
 python run_misa.py -h
+cd ..
 ~~~
 
 ### Install other methods
