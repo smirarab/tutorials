@@ -37,9 +37,9 @@ skmer -h
 ### Instal APPLES
 python -m pip install -U apples
 run_apples.py -h
-pip list |grep apples
+python -m pip  list |grep apples
 ### If you have versions older than 1.3.0, you may need to updating using:
-pip3 install --upgrade apples
+python -m pip install --upgrade apples
 
 ### Install MISA
 git clone https://github.com/balabanmetin/misa.git
