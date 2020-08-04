@@ -186,8 +186,7 @@ skmer query -t mix-query/Saccharomyces_pastorianus.fna library/
 bash convert_to_tsv.sh dist-saccharomyces_pastorianus.txt > dist-saccharomyces_pastorianus.tsv
 
 # Run MISA for phylogenetic double placemet
-
-run_misa.py -d ../dist-saccharomyces_pastorianus.tsv -t ../backbone-fastme.tre -o ../mixed-output.jplace
+run_misa.py -d dist-saccharomyces_pastorianus.tsv -t backbone-fastme.tre -o mixed-output.jplace
 
 
 # Check the output versus correct mixture:
