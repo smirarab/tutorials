@@ -42,10 +42,8 @@ python -m pip  list |grep apples
 python -m pip install --upgrade apples
 
 ### Install MISA
-git clone https://github.com/balabanmetin/misa.git
-cd misa
-python run_misa.py -h
-cd ..
+python -m pip install misa
+run_misa.py -h
 ~~~
 
 ### Install other methods
@@ -188,9 +186,9 @@ skmer query -t mix-query/Saccharomyces_pastorianus.fna library/
 bash convert_to_tsv.sh dist-saccharomyces_pastorianus.txt > dist-saccharomyces_pastorianus.tsv
 
 # Run MISA for phylogenetic double placemet
-cd misa
-python run_misa.py -d ../dist-saccharomyces_pastorianus.tsv -t ../backbone-fastme.tre -o ../mixed-output.jplace
-cd ..
+
+run_misa.py -d ../dist-saccharomyces_pastorianus.tsv -t ../backbone-fastme.tre -o ../mixed-output.jplace
+
 
 # Check the output versus correct mixture:
 ./guppy tog mixed-output.jplace
