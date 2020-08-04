@@ -29,11 +29,15 @@ Other tools we will use:
 
 # Installations
 
-Instructions shown below work on MAC OS Catalina. Some changes are needed for Linux and Windows. See comments.
+* Instructions shown below work on MAC OS Catalina. Some changes are needed for Linux and Windows. See comments.
+* If you are unable to follow some of the steps, a lot of the outputs (all the smaller files) are provided here as a zip file you can download: [Skmer+APPLES+tutorial-smallfiles.zip](Skmer%2BAPPLES%2Btutorial-smallfiles.zip)
 
 ### Install main tools
 
 ~~~bash
+mkdir tutorial
+cd tutorial 
+
 conda create --name tutorial
 conda activate tutorial
 
