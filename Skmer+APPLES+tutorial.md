@@ -20,7 +20,7 @@
 
 # Installations
 
-Below instructions work on MAC OS Catalina. Some changes are needed for Linux and Windows. See comments.
+Instructions shown below work on MAC OS Catalina. Some changes are needed for Linux and Windows. See comments.
 
 ### Install main tools
 
