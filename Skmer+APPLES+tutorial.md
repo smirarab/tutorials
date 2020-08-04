@@ -210,6 +210,7 @@ How about contamination?
 
 # Using APPLES on aligned sequences
 
+On some simulated data.
 ~~~bash
 # Get example input data
 wget https://raw.githubusercontent.com/balabanmetin/apples/master/data/ref.fa
@@ -224,4 +225,19 @@ run_apples.py -s ref.fa -q query.fa -t minimum_evo_backbone.nwk -o aligned.jplac
 
 # Turn output to newick
 ./guppy tog aligned.jplace
+./guppy tog --xml aligned.jplace
+~~~
+
+More advanced options on [real data]()
+~~~bash
+wget https://raw.githubusercontent.com/balabanmetin/hslU/master/backbone_ml.nwk
+wget https://raw.githubusercontent.com/balabanmetin/hslU/master/query_nothird.fa
+wget https://raw.githubusercontent.com/balabanmetin/hslU/master/ref_nothird.fa
+
+# Reestimate branch lengths!
+./FastTree -nt -nosupport -nome -noml -log true_me.fasttree.log -intree backbone_ml.nwk < ref_nothird.fa > true_me.fasttree
+
+# Run APPLES
+run_apples.py -t true_me.fasttree -s ref_nothird.fa -q query_nothird.fa -m FM -c MLSE -f 0.2 -b 25 -o apples.jplace
+./guppy tog  --xml  apples.jplace
 ~~~
