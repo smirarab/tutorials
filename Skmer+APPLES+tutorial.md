@@ -1,22 +1,31 @@
-### Skmer+APPLES tutorial
+# Skmer+APPLES+MISA tutorial
+
+This toturial walks you through the use of Skmer for computing distances between genome skims, APPLES for phylgoenetic placement, and MISA for phylgoenetic placement of mixed samples (of two species). 
 
 ### Tools:
+
+Main tools:
 
 * [Skmer](https://github.com/shahab-sarmashghi/Skmer)
 * [APPLES](https://github.com/balabanmetin/apples)
 * [MISA](https://github.com/balabanmetin/misa)
+
+
+Other tools we will use:
+
 * [ART](https://www.niehs.nih.gov/research/resources/software/biostatistics/art/)
 * [FastME](http://www.atgc-montpellier.fr/fastme/binaries.php)
 * [FastTree-II](http://www.microbesonline.org/fasttree)
+* [guppy](https://matsen.github.io/pplacer/generated_rst/guppy.html)
 
 ### Papers:
 
 
-* S. Sarmashghi, K. Bohmann, M. T. P Gilbert, V. Bafna, and S. Mirarab. “Skmer: Assembly-Free and Alignment-Free Sample Identification Using Genome Skims.” Genome Biology Vol. 20, no. 1 (December 13, 2019): pp. 34. doi:10.1186/s13059-019-1632-4.
-* M. Balaban, S. Sarmashghi, and S. Mirarab. “APPLES: Scalable Distance-Based Phylogenetic Placement with or without Alignments.” Edited by David Posada. Systematic Biology Vol. 69, no. 3 (May 1, 2020): pp. 566–78. doi:10.1093/sysbio/syz063.
-* M. Balaban, and S. Mirarab. “Phylogenetic Double Placement of Mixed Samples.” Bioinformatics Vol. 36, no. Supplement_1 (July 1, 2020): pp. i335–43. doi:10.1093/bioinformatics/btaa489.
-* K. Bohmann, S. Mirarab, V. Bafna, and M. T. P. Gilbert. “Beyond DNA Barcoding: The Unrealized Potential of Genome Skim Data in Sample Identification.” Molecular Ecology, June 29, 2020, pp. mec.15507. doi:10.1111/mec.15507.
-* E. Rachtman, M. Balaban, V. Bafna, and S. Mirarab. “The Impact of Contaminants on the Accuracy of Genome Skimming and the Effectiveness of Exclusion Read Filters.” Molecular Ecology Resources Vol. 20, no. 3 (May 4, 2020): pp. 1755-0998.13135. doi:10.1111/1755-0998.13135.
+* S. Sarmashghi, K. Bohmann, M. T. P Gilbert, V. Bafna, and S. Mirarab. “Skmer: Assembly-Free and Alignment-Free Sample Identification Using Genome Skims.” Genome Biology Vol. 20, no. 1 (2019): pp. 34. doi:10.1186/s13059-019-1632-4.
+* M. Balaban, S. Sarmashghi, and S. Mirarab. “APPLES: Scalable Distance-Based Phylogenetic Placement with or without Alignments.” Edited by David Posada. Systematic Biology Vol. 69, no. 3 (2020): pp. 566–78. doi:10.1093/sysbio/syz063.
+* M. Balaban, and S. Mirarab. “Phylogenetic Double Placement of Mixed Samples.” Bioinformatics Vol. 36, no. Supplement_1 (2020): pp. i335–43. doi:10.1093/bioinformatics/btaa489.
+* K. Bohmann, S. Mirarab, V. Bafna, and M. T. P. Gilbert. “Beyond DNA Barcoding: The Unrealized Potential of Genome Skim Data in Sample Identification.” Molecular Ecology, (2020), pp. mec.15507. doi:10.1111/mec.15507.
+* E. Rachtman, M. Balaban, V. Bafna, and S. Mirarab. “The Impact of Contaminants on the Accuracy of Genome Skimming and the Effectiveness of Exclusion Read Filters.” Molecular Ecology Resources Vol. 20, no. 3 (2020): pp. 1755-0998.13135. doi:10.1111/1755-0998.13135.
 
 # Installations
 
