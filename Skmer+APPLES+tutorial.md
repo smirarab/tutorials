@@ -179,7 +179,7 @@ bash ../convert_to_tsv.sh dist-saccharomyces_cerevisiae.fna.txt > dist-saccharom
 run_apples.py -t ../backbone-fastme.tre -d dist-saccharomyces_cerevisiae.tsv -o cerevisiae.jplace
 
 # Turn output to newick
-./guppy tog cerevisiae.jplace
+../guppy tog cerevisiae.jplace
 
 # Compare to the genome-based run
 
