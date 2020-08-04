@@ -129,7 +129,7 @@ fastme-2.1.5/binaries/fastme-2.1.5-osx  -i ref-dist-mat.phy  -o backbone-fastme-
 ## Run actual placement
 ~~~bash
 # A small script again to convert formats
-wget https://github.com/balabanmetin/misa/blob/master/scripts/convert_to_tsv.sh
+wget https://raw.githubusercontent.com/balabanmetin/misa/master/scripts/convert_to_tsv.sh
 
 # Ask skmer to compute distances from query to references
 skmer query -t nonhybrids-query/Saccharomyces_cerevisiae.fna library/ # Use -a if you want the query to be added
