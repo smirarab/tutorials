@@ -50,7 +50,6 @@ python run_misa.py -h
 ### Install other methods
 ~~~bash
 ### Install FastME (to get backbone trees)
-
 wget http://www.atgc-montpellier.fr/download/sources/fastme/fastme-2.1.5.tar.gz
 tar xvfz fastme-2.1.5.tar.gz
 chmod +x fastme-2.1.5/binaries/fastme-2.1.5-osx ## Change "osx" at the end if using other platforms (inux or windows).
