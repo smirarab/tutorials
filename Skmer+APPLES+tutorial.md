@@ -54,11 +54,13 @@ cd ..
 wget http://www.atgc-montpellier.fr/download/sources/fastme/fastme-2.1.5.tar.gz
 tar xvfz fastme-2.1.5.tar.gz
 chmod +x fastme-2.1.5/binaries/fastme-2.1.5-osx ## Change "osx" at the end if using other platforms (inux or windows).
+./fastme-2.1.5/binaries/fastme-2.1.5-osx -h
 
 ### install fasttree
 wget http://www.microbesonline.org/fasttree/FastTree.c
 gcc -O3 -finline-functions -funroll-loops -Wall -o FastTree FastTree.c -lm
 ### Note: for linux, you can find binary files on the FastTree website
+./FastTree -h
 
 ### Guppy for working with .jplace files
 wget https://github.com/smirarab/sepp/raw/master/tools/bundled/Darwin/guppy
