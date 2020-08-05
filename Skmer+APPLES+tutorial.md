@@ -18,6 +18,10 @@ Other tools we will use:
 * [FastTree-II](http://www.microbesonline.org/fasttree)
 * [guppy](https://matsen.github.io/pplacer/generated_rst/guppy.html)
 
+### A live recording of this tutorial at **Bioinformatics Boot Camp for Ecology and Evolution**
+
+https://www.youtube.com/watch?v=gy0HlCjl50w
+
 ### Papers:
 
 
