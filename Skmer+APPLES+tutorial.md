@@ -211,7 +211,13 @@ run_misa.py -d dist-saccharomyces_pastorianus.tsv -t backbone-fastme.tre -o mixe
 cat genomes/Saccharomyces_pastorianus/things.txt
 ~~~
 
-How about contamination?
+You will see the following beautiful result. 
+
+![MISA results](./pastorianus.png)
+* Top: the full reference tree before removing Saccharomyces cerevisiae. The Two blue branches are constituents of Saccharomyces pastorianus. 
+* Bottom: Results of placement of Saccharomyces pastorianus on the tree after removing Saccharomyces cerevisiae. 
+
+# How about contamination?
  
 * See Rachtman et al, 2019. Suggest using Kraken as one possible solution.
 * Stay tuned ...
