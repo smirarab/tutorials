@@ -131,13 +131,18 @@ done # We only choose non-hybrid species
 ## Kraken filtering
 
 * If you have Kraken-II, run:
-* 
+
 ~~~bash
 mkdir -p {classified,unclassified,reports}
+
+# perform filtering on each genome
+for x in `cat genomes/nonhybrids.txt`; do
+        kraken2/kraken2 --use-names --threads 4 --report reports/${x}.report --db  kraken_db_standard_k35l31s7 --confidence 0.0 --classified-out  classified/${x}.fq --unclassified-out unclassified/${x}.fq preprocessed/${x}.fq  > reports/${x}.out 2> reports/${x}.err
+done 
 ~~~
 
 * If you don't have Kraken-II, let's assume for now we have no contamination and run:
-* 
+
 ~~~bash
 mkdir -p {unclassified}
 for x in `cat genomes/nonhybrids.txt`; do 
