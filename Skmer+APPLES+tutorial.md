@@ -1,4 +1,4 @@
-# Skmer+APPLES+MISA tutorial
+# A tutorial on alignment-free phylogenetic placement using Skmer+APPLES and Skmer+MISA
 
 This toturial walks you through the use of Skmer for computing distances between genome skims, APPLES for phylgoenetic placement, and MISA for phylgoenetic placement of mixed samples (of two species). 
 
