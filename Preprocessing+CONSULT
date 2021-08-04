@@ -1,3 +1,65 @@
+
+# A tutorial on preprocessing and filtering of sequencing skimming data 
+
+
+This tutorial walks you through the use of Skmer for computing distances (after data cleanup using Kraken and BBTools) between genome skims, FastMe for phylgoenetic reconstruction.
+
+
+
+### Tools:
+
+Tools used:
+
+* [BBTools](https://sourceforge.net/projects/bbmap) for read cleanup
+* [CONSULT](https://github.com/DerrickWood/kraken2.git) for filtering bacterial contamination
+
+**System requirement:**
+
+- Of the tools mentioned here,CONSULT is practically only available on Linux servers with high enough memory and disk space. Others should work on MAC as well. If you cannot run the Kraken step, you can skip it. 
+
+
+# Installations
+
+* Instructions shown below work on Linux. Some changes are needed for other systems. See comments.
+
+### Install tools
+
+~~~bash
+mkdir tutorial
+cd tutorial 
+
+conda create --name tutorial
+conda activate tutorial
+
+conda config --add channels bioconda
+
+### download bbtools and extract archive
+wget -O bbmap.tar.gz  https://sourceforge.net/projects/bbmap/files/BBMap_38.87.tar.gz/download
+tar -zxvf bbmap.tar.gz
+rm bbmap.tar.gz
+
+### download bbtools preprocessing pipeline
+wget https://raw.githubusercontent.com/balabanmetin/tools/master/bbmap_pipeline.sh
+chmod +x ./bbmap_pipeline.sh
+
+
+~~~
+
+
+
+
+## Cleanup skims using BBtools
+~~~bash
+
+# This script dedupblicates, removes primers, and merges paired-end reads
+for x in `cat genomes/nonhybrids.txt`; do 
+        ./bbmap_pipeline.sh reads/${x}1.fq reads/${x}2.fq preprocessed/${x}.fq
+done # We only choose non-hybrid species
+~~~
+
+
+
+
 # CONSULT
 <!-- Accurate contamination removal using locality-sensitive hashing-->
 
@@ -10,17 +72,6 @@ The paper where we have described design of the algorithm and software architect
 
 * Raw data are deposited in https://github.com/noraracht/lsh_raw_data.
 
-* Our custom CONSULT libraries constructed using different genomic reference sets:
-    - [GTDB](https://tera-trees.com/data/consult/v1.0.0/all_nbrhood_kmers_k32_p3l2clmn7_K15-map2-171_gtdb.tar.gz)
-    - [TOL](https://tera-trees.com/data/consult/v1.0.0/all_nbrhood_kmers_k32_p3l2clmn7_K15-map2-171_ToL.tar.gz)
-    - [Bacterial/Archaeal Kraken](https://tera-trees.com/data/consult/v1.0.0/all_nbrhood_kmers_k32_p3l2clmn7_K15-map2-171_kraken.tar.gz)
-    - [Mitochondrial CONSULT database](https://tera-trees.com/data/consult/v1.0.0/consult_mito_k32_p3l2clmn7_K15_tag2_v171.tar.gz)
-    - [Plastid CONSULT database](https://tera-trees.com/data/consult/v1.0.0/consult_plastid_k32_p3l2clmn7_K15_tag2_v171.tar.gz)
-  
-  <!--  - [GTDB](https://drive.google.com/file/d/1MQJAXmZiTurumlZpvNoMLB0tKWGM_VE4/view?usp=sharing)-->
-  <!--    - [TOL](https://drive.google.com/file/d/1sA9HFjWoU2jZ2vjd98pHVDEFRzOKMImk/view?usp=sharing)-->
-  <!--    - [Bacterial/Archaeal Kraken](https://drive.google.com/file/d/1jeZB6b6aXl06BpPPsjM8oQA4xingJ1Dq/view?usp=sharing)-->
-  <!--   - [Mitochondrial CONSULT database](https://drive.google.com/file/d/1mFD3dYFrJKqUkWlkRHbrQt-6eG-_K5vI/view?usp=sharing)-->
 
 At the moment when using our libraries, library name needs to stay unchanged since library files are prefixed with library name. This will change in future releases to allow for more flexibility.
 
