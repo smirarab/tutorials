@@ -2,6 +2,10 @@
 
 This toturial walks you through the use of Skmer for computing distances between genome skims, APPLES for phylgoenetic placement, and MISA for phylgoenetic placement of mixed samples (of two species). 
 
+**Recording**: A live recording of this tutorial from a different offering at  *Bioinformatics Boot Camp for Ecology and Evolution* is availab le below
+
+https://www.youtube.com/watch?v=gy0HlCjl50w
+
 ## Tools:
 
 Main tools:
@@ -18,11 +22,6 @@ Other tools we will use:
 * [FastTree-II](http://www.microbesonline.org/fasttree)
 * [guppy](https://matsen.github.io/pplacer/generated_rst/guppy.html)
 
-## Recording
-
-A live recording of this tutorial from a different offering at  *Bioinformatics Boot Camp for Ecology and Evolution* is availab le below
-
-https://www.youtube.com/watch?v=gy0HlCjl50w
 
 ## Papers:
 
