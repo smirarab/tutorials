@@ -2,7 +2,7 @@
 
 This toturial walks you through the use of Skmer for computing distances between genome skims, APPLES for phylgoenetic placement, and MISA for phylgoenetic placement of mixed samples (of two species). 
 
-### Tools:
+## Tools:
 
 Main tools:
 
@@ -18,11 +18,13 @@ Other tools we will use:
 * [FastTree-II](http://www.microbesonline.org/fasttree)
 * [guppy](https://matsen.github.io/pplacer/generated_rst/guppy.html)
 
-### A live recording of this tutorial from a different offering at  *Bioinformatics Boot Camp for Ecology and Evolution* is availab le below
+## Recording
+
+A live recording of this tutorial from a different offering at  *Bioinformatics Boot Camp for Ecology and Evolution* is availab le below
 
 https://www.youtube.com/watch?v=gy0HlCjl50w
 
-### Papers:
+## Papers:
 
 
 * S. Sarmashghi, K. Bohmann, M. T. P Gilbert, V. Bafna, and S. Mirarab. “Skmer: Assembly-Free and Alignment-Free Sample Identification Using Genome Skims.” Genome Biology Vol. 20, no. 1 (2019): pp. 34. doi:10.1186/s13059-019-1632-4.
@@ -33,19 +35,60 @@ https://www.youtube.com/watch?v=gy0HlCjl50w
 
 # Installations
 
-* Instructions shown below work on Linux, and in particular, login-1.saga.sigma2.no. Some changes are needed for MAC and Windows. See comments.
+The following steps show how to install the tools.
 * If you are unable to follow some of the steps, a lot of the outputs (all the smaller files) are provided here as a zip file you can download: [Skmer+APPLES+tutorial-smallfiles.zip](Skmer%2BAPPLES%2Btutorial-smallfiles.zip)
 
-### Install main tools
 
-The following steps show how to install the tools for yourself. 
-* However, these are also available under `/cluster/home/smirarab/.conda/envs/skmer/`;
-* If you want to use the pre-installed versions, you can skip these. 
+
+## On the cluster (pre-installed)
+
+On the cluster, the tools are already installed. 
+
+Start with:
 
 ~~~bash
-mkdir tutorial
-cd tutorial 
+## Activate Conda
+conda activate /cluster/projects/nn9458k/oh_know/.conda/skmer
 
+## Load modules
+
+### Load FastME
+module load FastME/2.1.6.2-GCC-10.2.
+
+### Load FastTree
+module swap GCCcore/10.2.0 GCCcore/8.3.0
+module load FastTree/2.1.11-GCCcore-8.3.0
+
+
+### Best if /cluster/projects/nn9458k/oh_know/teachers//bin is in your path;
+export PATH=$PATH:/cluster/projects/nn9458k/oh_know/teachers//bin
+
+# Guppy:
+### is available here:/cluster/projects/nn9458k/oh_know/teachers//bin/guppy
+
+# (Optional) ART
+### is available here:
+### /cluster/projects/nn9458k/oh_know/teachers//bin/art_bin_MountRainier/art_illumina 
+
+## Test to make sure everything is installed
+skmer -h
+run_apples.py -h
+run_misa.py -h
+fastme -h
+FastTree -h
+
+/cluster/projects/nn9458k/oh_know/teachers//bin/guppy -h
+# or even better:
+guppy -h
+
+/cluster/projects/nn9458k/oh_know/teachers//bin/art_bin_MountRainier/art_illumina -h
+
+~~~ 
+
+## Install on a new machine or locally
+* Instructions shown below work on Linux, and in particular, login-1.saga.sigma2.no. Some changes are needed for MAC and Windows. See comments.
+
+~~~bash
 conda create --name skmer
 conda activate skmer
 
@@ -65,39 +108,7 @@ python -m pip install --upgrade apples
 ### Install MISA
 python -m pip install misa
 run_misa.py -h
-~~~
 
-
-### Install other methods
-Some of the tools we need are available on the cluster and we don't need to install them. 
-We will simply load them. 
-
-#### Load them
-~~~bash
-# Load FastME
-module load FastME/2.1.6.2-GCC-10.2.
-fastme -h
-
-# Load FastTree
-module swap GCCcore/10.2.0 GCCcore/8.3.0
-module load FastTree/2.1.11-GCCcore-8.3.0
-FastTree -h
-
-# Guppy:
-### Make sure you have access to /cluster/projects/nn9458k/oh_know/teachers//bin/guppy
-/cluster/projects/nn9458k/oh_know/teachers//bin/guppy -h
-### Best if /cluster/projects/nn9458k/oh_know/teachers//bin is in your path; then you can do
-guppy -h
-
-# (Optional) ART
-### Make sure you have access to:
-/cluster/projects/nn9458k/oh_know/teachers//bin/art_bin_MountRainier/art_illumina -h
-~~~
-
-#### Install them (skip if you Load them)
-Elsewhere, you may not have these. Here is how you would  install them. 
-
-~~~bash
 
 ### Install FastME (to get backbone trees)
 wget http://www.atgc-montpellier.fr/download/sources/fastme/fastme-2.1.5.tar.gz
@@ -125,7 +136,7 @@ tar xvfz artbinmountrainier2016.06.05macos64.tgz
 art_bin_MountRainier/art_illumina -h
 ~~~
 
-### Obtain large datasets
+# Obtain large datasets
 
 We have pre-downloaded the datasets on the cluster. Just make a link:
 
