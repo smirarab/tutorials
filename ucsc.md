@@ -157,50 +157,48 @@ Downloaded data from [here](https://drive.google.com/drive/folders/1r9IaMt392AY9
    
    # If you have newick utilities:
    nw_reroot backbone.tre |nw_display -
-                    | CEJES6B739 S115 R1 001
-                    |
-                    | CCALV3B613 S116 R2 001
-                    |
-                    |                               | |it 1938 S10 R2 001
-                    |     +---------------------------+
-                    |-----+                           +-+ Dit 1938 S10 R1 001
- +------------------+     |
- |                  | CCAL|3B613 S116 R1 001
- |                  |
-=|                 ||CEJES6B739 S115 R2 001
- |
- |                 ||FCBDE6B758 S118 R1 001
- +------------------+
-                    | FCBDE6B758 S118 R2 001
+			    | CEJES6B739 S115 R1 001
+			    |
+			    | CCALV3B613 S116 R2 001
+			    |
+			    |                               | |it 1938 S10 R2 001
+			    |     +---------------------------+
+			    |-----+                           +-+ Dit 1938 S10 R1 001
+	 +------------------+     |
+	 |                  | CCAL|3B613 S116 R1 001
+	 |                  |
+	=|                 ||CEJES6B739 S115 R2 001
+	 |
+	 |                 ||FCBDE6B758 S118 R1 001
+	 +------------------+
+			    | FCBDE6B758 S118 R2 001
 
- |----------------|---------------|----------------|-----
- 0            0.001           0.002            0.003
- substitutions/site
+	 |----------------|---------------|----------------|-----
+	 0            0.001           0.002            0.003
+	 substitutions/site
    ~~~
   
   ### Add a query onto the tree
   
   1. Download some new sample; we grabbed from [here](https://drive.google.com/drive/folders/1j4aRRs5-q1ZoQUg4a6NMvDw09Ux7F2RK).
-  
-	  ~~~bash
-	  # compute distances from query to library
-	  # -a tells the skmer to add the query to the library
-	  skmer query -t -a ditGra1_S163_R1_001.fastq library
-	  
-	  # look at those distances
-	  column -t dist-ditgra1_s163_r1_001.txt
-	  
-	  ditGra1_S163_R1_001
-Dit_1938_S10_R1_001     0.004247606221784569
-Dit_1938_S10_R2_001     0.004262008940587567
-CCALV3B613_S116_R2_001  0.005809290678303558
-CCALV3B613_S116_R1_001  0.005967056863191565
-FCBDE6B758_S118_R2_001  0.0062520119487337895
-CEJES6B739_S115_R2_001  0.006313259420129632
-FCBDE6B758_S118_R1_001  0.006453031543366838
-CEJES6B739_S115_R1_001  0.006609567108046734
-	  ~~~
-	  * What do we make of these numbers? 
+     ~~~bash
+     # compute distances from query to library
+     # -a tells the skmer to add the query to the library
+     skmer query -t -a ditGra1_S163_R1_001.fastq library
+     
+     # look at those distances
+     column -t dist-ditgra1_s163_r1_001.txt
+     
+     ditGra1_S163_R1_001
+     Dit_1938_S10_R1_001     0.004247606221784569
+     Dit_1938_S10_R2_001     0.004262008940587567
+     CCALV3B613_S116_R2_001  0.005809290678303558
+     CCALV3B613_S116_R1_001  0.005967056863191565
+     FCBDE6B758_S118_R2_001  0.0062520119487337895
+     CEJES6B739_S115_R2_001  0.006313259420129632
+     FCBDE6B758_S118_R1_001  0.006453031543366838
+     CEJES6B739_S115_R1_001  0.006609567108046734
+     ~~~
   
   2. Use APPLES to add query to existing tree
 
@@ -213,7 +211,6 @@ CEJES6B739_S115_R1_001  0.006609567108046734
      ~~~
      
   3. Inspect the output
-
      ~~~bash
      # First, look at the file
      cat s163.jplace
@@ -223,26 +220,26 @@ CEJES6B739_S115_R1_001  0.006609567108046734
      
      # and display newick tree
      cat s163.tog.tre|nw_reroot -| nw_display -
- +-----------------+ ditGra1 S163 R1 001
- |
- |                   ||Dit 1938 S10 R2 001
-=|                 +--+
- |                 |  ++ Dit 1938 S10 R1 001
- |                 |
- +-----------------+         | C|ALV3B613 S116 R1 001
-                   |            |
-                   |            |  | CEJES6B739 S115 R1 001
-                   +------------+  |
-                                |  | CCALV3B613 S116 R2 001
-                                +--+
-                                   | CEJES6B739 S115 R2 001
-                                   |
-                                   |                    | FCBDE6B758 S118 R1 001
-                                   +--------------------+
-                                                        | FCBDE6B758 S118 R2 001
- |--------|---------|--------|--------|--------|---------
- 0    0.001     0.002    0.003    0.004    0.005
- substitutions/site
+		 +-----------------+ ditGra1 S163 R1 001
+		 |
+		 |                   ||Dit 1938 S10 R2 001
+		=|                 +--+
+		 |                 |  ++ Dit 1938 S10 R1 001
+		 |                 |
+		 +-----------------+         | C|ALV3B613 S116 R1 001
+						   |            |
+						   |            |  | CEJES6B739 S115 R1 001
+						   +------------+  |
+										|  | CCALV3B613 S116 R2 001
+										+--+
+										   | CEJES6B739 S115 R2 001
+										   |
+										   |                    | FCBDE6B758 S118 R1 001
+										   +--------------------+
+																| FCBDE6B758 S118 R2 001
+		 |--------|---------|--------|--------|--------|---------
+		 0    0.001     0.002    0.003    0.004    0.005
+		 substitutions/site
      ~~~ 
      
   4. You could also redo the tree
@@ -267,27 +264,27 @@ CEJES6B739_S115_R1_001  0.006609567108046734
 	
 	  # And display it:
 	  nw_reroot backbone.tre |nw_display -
-	 +-----------------+ ditGra1 S163 R1 001
-	 |
-	 |                                  | CEJES6B739 S115 R1 001
-	 |                                  |
-	 |                                  | CCALV3B613 S116 R2 001
-	 |                                  |
-	=|                               +--+                   | FCBDE6B758 S118 R2 001
-	 |                               |  |-------------------+
-	 |                               |  |                   | FCBDE6B758 S118 R1 001
-	 |                 +-------------+  |
-	 |                 |             |  | CEJES6B739 S115 R2 001
-	 |                 |             |
-	 +-----------------+          | C|ALV3B613 S116 R1 001
-	                   |
-	                   |||Dit 1938 S10 R2 001
-	                   +-+
-	                     ++ Dit 1938 S10 R1 001
-	
-	 |-----------------|-----------------|-----------------|-
-	 0             0.002             0.004             0.006
-	 substitutions/site
+		 +-----------------+ ditGra1 S163 R1 001
+		 |
+		 |                                  | CEJES6B739 S115 R1 001
+		 |                                  |
+		 |                                  | CCALV3B613 S116 R2 001
+		 |                                  |
+		=|                               +--+                   | FCBDE6B758 S118 R2 001
+		 |                               |  |-------------------+
+		 |                               |  |                   | FCBDE6B758 S118 R1 001
+		 |                 +-------------+  |
+		 |                 |             |  | CEJES6B739 S115 R2 001
+		 |                 |             |
+		 +-----------------+          | C|ALV3B613 S116 R1 001
+						   |
+						   |||Dit 1938 S10 R2 001
+						   +-+
+							 ++ Dit 1938 S10 R1 001
+
+		 |-----------------|-----------------|-----------------|-
+		 0             0.002             0.004             0.006
+		 substitutions/site
 	  ~~~
   
  ### Add another query onto the tree 
@@ -383,16 +380,16 @@ CEJES6B739_S115_R1_001  0.006609567108046734
 	 skmer distance -t library
 	  
 	 # Look at distances
-     column -t ref-dist-mat.txt 
-     sample                    CCALV3B613_S116_both_001  CEJES6B739_S115_both_001  Dit_1938_S10_both_001  FCBDE6B758_S118_both_001  ditGra1_S163_both_001  ditGra2_S164_both_001
-CCALV3B613_S116_both_001  0.0                       0                         0.0006931091362385231  0.0021092287912777923     0.003094254134256472   0.0027175476124217737
-CEJES6B739_S115_both_001  0                         0.0                       0.0010941671840699913  0.002256308751831658      0.0035038030984755227  0.002948968474035177
-Dit_1938_S10_both_001     0.0006931091362385231     0.0010941671840699913     0.0                    0.003814417288488263      0.003019312482994785   0.0036312702142234955
-FCBDE6B758_S118_both_001  0.0021092287912777923     0.002256308751831658      0.003814417288488263   0.0                       0.00305936348863708    0.002721788925570516
-ditGra1_S163_both_001     0.003094254134256472      0.0035038030984755227     0.003019312482994785   0.00305936348863708       0.0                    0
-ditGra2_S164_both_001     0.0027175476124217737     0.002948968474035177      0.0036312702142234955  0.002721788925570516      0                      0.0
+     column -t ref-dist-mat.txt
+	 sample                    CCALV3B613_S116_both_001  CEJES6B739_S115_both_001  Dit_1938_S10_both_001  FCBDE6B758_S118_both_001  ditGra1_S163_both_001  ditGra2_S164_both_001
+	 CCALV3B613_S116_both_001  0.0                       0                         0.0006931091362385231  0.0021092287912777923     0.003094254134256472   0.0027175476124217737
+	 CEJES6B739_S115_both_001  0                         0.0                       0.0010941671840699913  0.002256308751831658      0.0035038030984755227  0.002948968474035177
+	 Dit_1938_S10_both_001     0.0006931091362385231     0.0010941671840699913     0.0                    0.003814417288488263      0.003019312482994785   0.0036312702142234955
+	 FCBDE6B758_S118_both_001  0.0021092287912777923     0.002256308751831658      0.003814417288488263   0.0                       0.00305936348863708    0.002721788925570516
+	 ditGra1_S163_both_001     0.003094254134256472      0.0035038030984755227     0.003019312482994785   0.00305936348863708       0.0                    0
+	 ditGra2_S164_both_001     0.0027175476124217737     0.002948968474035177      0.0036312702142234955  0.002721788925570516      0                      0.0
      
-     # Update figure
+	 # Update figure
      echo "m=as.matrix(read.csv('ref-dist-mat.txt',sep='\t',row.names=1)); pdf('fig4.pdf',width=12,height=9);plot(hclust(as.dist(m))); heatmap(m, scale = 'none');dev.off()"|R --vanilla
 
      # Download and inspect fig4.pdf
@@ -403,21 +400,21 @@ ditGra2_S164_both_001     0.0027175476124217737     0.002948968474035177      0.
       fastme-2.1.5/binaries/fastme-2.1.5-linux64  -i ref-dist-mat.phy  -o backbone-merged.tre
  
      nw_reroot backbone-merged.tre |nw_display -
-	                                    +-+ CEJES6B739 S115 both 001
-	                                    |
-	                +-------------------+ +---------------+ Dit 1938 S10 both 001
-	                |                   +-+
-	 +--------------+                 | CC|LV3B613 S116 both 001
-	 |              |
-	=|              +---------------------+ FCBDE6B758 S118 both 001
-	 |
-	 |              ++ ditGra1 S163 both 001
-	 +--------------+
-	              | |itGra2 S164 both 001
-	
-	 |--------|--------|--------|-------|--------|---------
-	 0   0.0005    0.001   0.0015   0.002   0.0025
-	 substitutions/site
+											+-+ CEJES6B739 S115 both 001
+											|
+						+-------------------+ +---------------+ Dit 1938 S10 both 001
+						|                   +-+
+		 +--------------+                 | CC|LV3B613 S116 both 001
+		 |              |
+		=|              +---------------------+ FCBDE6B758 S118 both 001
+		 |
+		 |              ++ ditGra1 S163 both 001
+		 +--------------+
+					  | |itGra2 S164 both 001
+
+		 |--------|--------|--------|-------|--------|---------
+		 0   0.0005    0.001   0.0015   0.002   0.0025
+		 substitutions/site
 	 ~~~
   
       **Note how OmniC results look much better now.**
